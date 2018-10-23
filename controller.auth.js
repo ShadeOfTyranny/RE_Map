@@ -1,4 +1,4 @@
-app.controller('AuthCtrl', ['$scope', '$location', '$interval', 'DataService', function($scope, $location, $interval, DataService) {
+app.controller('AuthCtrl', ['$scope', '$location', '$interval', 'DataService', 'MusicService', function($scope, $location, $interval, DataService, MusicService) {
     var id = fetch();
     var sheetId = '1iiTPm7fyWlPBHNr8y4VKi9CKjw4ZqpONy2-iP6Sg6ng';
     $scope.ready = false;
@@ -18,6 +18,20 @@ app.controller('AuthCtrl', ['$scope', '$location', '$interval', 'DataService', f
     unavailableDiv.style.display = 'none';
     loadingDiv.style.display = 'none';
     bar.style.value = '0px';
+
+    //Load chapter music
+
+    MusicService.initalizePlayer();
+
+    $scope.toggleMusic = function() { 
+        MusicService.toggleMusic(); 
+    };
+
+    $scope.musicPlaying = function() {
+        return MusicService.musicPlaying();
+    };
+
+
 
     function displayShopDialog() {
         $scope.showShop = true;
