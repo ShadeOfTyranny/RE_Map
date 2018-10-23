@@ -1,6 +1,6 @@
 app.controller('AuthCtrl', ['$scope', '$location', '$interval', 'DataService', function($scope, $location, $interval, DataService) {
     var id = fetch();
-    var sheetId = '1Y9xK4Dr02jSW_b_7pT6Cc25_qSwS2I6eeafECd2lu7k';
+    var sheetId = '10C2m815nqWcWjeijL-Im9IZHVcRJfr9kd_JwMpcl0kU';
     $scope.ready = false;
     var checkGapi = $interval(checkAuth, 250);
     $scope.loadingIcon = pickLoadingIcon();
