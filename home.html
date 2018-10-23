@@ -1,14 +1,10 @@
-﻿<div class="backgroundBox"></div>
+<div class="backgroundBox"></div>
 <div id="dropArea" class="mapBox">
 	<img id="map" ng-src="{{mapUrl}}" style="display: block;" />
 	<div style="display: block; height: 25px; margin-top: 5px;">
 		<button ng-click="launchConvoyDialog()" class="convoyButton">Convoy</button>
 		<button ng-click="launchShopDialog()" class="convoyButton">Shop</button>
 	</div>
-	<span class="speakerIcon">&#128266;</span>
-		<input id="musicVolumeSlider" type="range" class="rangeStyle" min="0" max="100" step="1" value="100" oninput="adjustMusicVolume()"/>
-		<select ng-model="selectedTrack" ng-options="theme.name for theme in musicTracks" ng-change="setTrack()" class="musicPickerStyle"></select>
-
 
 	<!--Draw tile names-->
 	<div ng-repeat="(yIndex,row) in rows" class="absolutePos" ng-style="{top: determineGlowY(yIndex)}">
